@@ -145,3 +145,10 @@ Developed for learning and demonstration purposes.
 
 ---
 
+
+## 📌 Note
+
+This project was developed for academic purposes and runs locally using Flask and MySQL.  
+It demonstrates full-stack development concepts including authentication, CRUD operations, and database integration.
+
+---
