@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style23.css')}}">
+    <script src="{{url_for('static',filename='js/calc.js')}}"></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/loanrequest">Back</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="secviewloan">
+        <div class="viewloanimg">
+            <img src="{{row[13]}}" alt="loading">
+        </div>
+        <div class="viewloanuser">
+            <h4>Name: <mark>{{row[0]}}</mark></h4>
+            <h4>Date of Birth: <mark>{{row[1]}}</mark></h4>
+            <h4>Email: <mark>{{row[2]}}</mark></h4>
+            <h4>Mobile No: <mark>{{row[3]}}</mark></h4>
+            <h4>Address: <mark>{{row[4]}}</mark></h4>
+            <h4>Aadhar No: <mark>{{row[5]}}</mark></h4>
+        </div>
+        <div class="viewloanbank">
+            <h4>Account No: <mark>7028000{{row[6]}}</mark></h4>
+            <h4>Customer Id: <mark>EMOBKID{{row[6]}}</mark></h4>
+            <h4>IFSC Code: <mark>EMOK0701011</mark></h4>
+            <h4>Branch Name: <mark>TIRUNELVELI TOWN</mark></h4>
+            <h4>Branch Address <mark>228 West Car street, Town Tiruelveli Tamilnadu, Tirunelveli, 627006</mark></h4>
+            <h4>Branch Tel: <mark>0462-2332342</mark></h4>
+        </div>
+        <div class="viewloandoc">
+            <h4>Requested Loan: <mark>{{row[7]}}</mark></h4>
+            <h4>Requested Loan Amount: <mark>₹{{row[8]}}0</mark></h4>
+            <h4>Aadhar Document: <a href="{{row[9]}}">Click here</a></h4>
+            <h4>Pan Card Document: <a href="{{row[10]}}">Click here</a></h4>
+            <h4>Submited Document: <a href="{{row[11]}}">Click here</a></h4>
+            <form action="/viewloans" method="get">
+                <input type="text" name="lid" value="{{row[12]}}" hidden>
+                <h4>Accepted Loan Amount: <input type="text" name="lamount" value="{{row[8]}}" required></h4>
+                <div class="view-action">
+                    <button type="submit" name="laccept" value="laccepted">Approve</button>
+            </form>
+            <form action="/viewloans" method="get">
+                <input type="text" name="lid" value="{{row[12]}}" hidden>
+                <button type="submit" name="reject" value="rejected">Reject</button>
+            </form>
+        </div>
+        </div>
+    </section>
+    <footer class="foot">
+        <div class="footbg">
+            <div class="foot1">
+                <h2>Popular Products</h2>
+                <ul>
+                    <li>Home Loan</li> |
+                    <li>Personal Loan</li> |
+                    <li>Education Loan</li> |
+                    <li>Savings Account</li> |
+                    <li>Salary Account</li> |
+                    <li>Debit Card</li> |
+                    <li>Pre-paid Cards</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <div class="footp1">
+                    <ul>
+                        <li>Complaint for Failed Digital Transactions</li>
+                        <li>RTI Act</li>
+                        <li>Verify Check Sum Value</li>
+                        <li>Vigilance Overtone Complaints</li>
+                        <li>Govt. of India - Cyber Fraud Reporting Portal</li>
+                    </ul>
+                </div>
+                <div class="footp2">
+                    <ul>
+                        <li>Our Health care Product</li>
+                        <li>ASBA</li>
+                        <li>Rajbhasha</li>
+                        <li>Blocking of Internet Banking</li>
+                        <li>Disability / Divyangjan Accessible Branches</li>
+                        <li>ATM Accessible to Divyangjans with Braille /
+                            Talking ATM Facility</li>
+                        <li>Branches with Dedicated Nodal Officer /
+                            Counter for providing services</li>
+                    </ul>
+                </div>
+                <div class="footp3">
+                    <ul>
+                        <li>Udyami</li>
+                        <li>Downloads</li>
+                        <li>Terms & Conditions</li>
+                        <li>Bank Holiday Calendar</li>
+                        <li>Help?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot3">
+                <h1>©2026 Bank Of India. All rights reserved.</h1>
+                <p>Site best viewed at 136*768 resolution in Microsoft Edge 105+,
+                    Mozilla 105+ and Google Chrome 106+ browser versions.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

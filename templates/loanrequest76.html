@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style23.css')}}">
+    <script src="{{url_for('static',filename='js/calc.js')}}"></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/adminHome">Back</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="secloanrequest">
+        <h1>LOAN REQUEST APPROVAL</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Loan ID</th>
+                    <th>Image of the Borrower</th>
+                    <th>Name of the Borrower</th>
+                    <th>Mobile No</th>
+                    <th>Email</th>
+                    <th>Account. No</th>
+                    <th>Applied Loan</th>
+                    <th>Loan Amount</th>
+                    <th>Action</th>
+                </tr>
+                {% for i in rows:%}
+                <tr>
+                    <td>{{i[0]}}</td>
+                    <td><img src="{{i[1]}}"></td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+                    <td>{{i[4]}}</td>
+                    <td>7028000{{i[5]}}</td>
+                    <td>{{i[6]}}</td>
+                    <td>₹{{i[7]}}0</td>
+                    <td><form action="/viewloans" method="get">
+                        <input type="text" name="lid" value="{{i[0]}}" hidden>
+                        <button name="loanrequest" value="loanrequested" type="submit">CHECK</button>
+                    </form></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </section>
+    <footer class="foot">
+        <div class="footbg">
+            <div class="foot1">
+                <h2>Popular Products</h2>
+                <ul>
+                    <li>Home Loan</li> |
+                    <li>Personal Loan</li> |
+                    <li>Education Loan</li> |
+                    <li>Savings Account</li> |
+                    <li>Salary Account</li> |
+                    <li>Debit Card</li> |
+                    <li>Pre-paid Cards</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <div class="footp1">
+                    <ul>
+                        <li>Complaint for Failed Digital Transactions</li>
+                        <li>RTI Act</li>
+                        <li>Verify Check Sum Value</li>
+                        <li>Vigilance Overtone Complaints</li>
+                        <li>Govt. of India - Cyber Fraud Reporting Portal</li>
+                    </ul>
+                </div>
+                <div class="footp2">
+                    <ul>
+                        <li>Our Health care Product</li>
+                        <li>ASBA</li>
+                        <li>Rajbhasha</li>
+                        <li>Blocking of Internet Banking</li>
+                        <li>Disability / Divyangjan Accessible Branches</li>
+                        <li>ATM Accessible to Divyangjans with Braille /
+                            Talking ATM Facility</li>
+                        <li>Branches with Dedicated Nodal Officer /
+                            Counter for providing services</li>
+                    </ul>
+                </div>
+                <div class="footp3">
+                    <ul>
+                        <li>Udyami</li>
+                        <li>Downloads</li>
+                        <li>Terms & Conditions</li>
+                        <li>Bank Holiday Calendar</li>
+                        <li>Help?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot3">
+                <h1>©2026 Bank Of India. All rights reserved.</h1>
+                <p>Site best viewed at 136*768 resolution in Microsoft Edge 105+,
+                    Mozilla 105+ and Google Chrome 106+ browser versions.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

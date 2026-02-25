@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style23.css')}}">
+    <script src="{{url_for('static',filename='js/calc.js')}}"></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/loans">Loan</a></li>
+                {%if "email" not in session:%}
+                <li><a href="/login">Login</a></li>
+                {%else%}
+                <li><a href="/transactions">Transcations</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/profile">Profile</a></li>
+                {%endif%}
+            </ul>
+        </nav>
+    </header>
+    <section class="secprofile">
+        <center>
+            <div class="prof-img">
+                <a href="{{row[11]}}"><img src="{{row[11]}}"></a>
+            </div>
+        </center>
+        <div class="prof-details">
+            <div class="user-details">
+                <h2>Name:<mark>{{row[1]}}</mark></h2>
+                <h2>Date of Birth:<mark>{{row[7]}}</mark></h2>
+                <h2>Mobile No:<mark>{{row[6]}}</mark></h2>
+                <h2>Email:<mark>{{row[4]}}</mark></h2>
+                <h2>Occupation:<mark>{{row[8]}}</mark></h2>
+                <h2>Address:<mark>{{row[9]}}</mark></h2>
+                <h2>Account No:<mark>7028000{{row[0]}}</mark></h2>
+                <h2>Customer ID:<mark>EMOBKID{{row[0]}}</mark></h2>
+                <h2>IFSC Code:<mark>EMOK0701011</mark></h2>
+            </div>
+            <div class="br-details">
+                <h2>MICR Code:<mark>627657028</mark></h2>
+                <h2>Branch Name:<mark>TIRUNELVELI TOWN</mark></h2>
+                <h2>Branch Address:<mark>228 West Car street, Town Tirunelveli Tamilnadu, Tirunelveli, 627006</mark></h2>
+                <h2>Branch Telephone No:<mark>0462-2332342</mark></h2>
+                <h2>Branch Email:<mark>emobank7028@bank.in</mark></h2>
+                <h2>A/C Open Date:<mark>{{row[14]}}</mark></h2>
+                <h2>Scheme Desc:<mark>EMO YUVA ACCOUNT</mark></h2>
+                <h2>Scheme Code:<mark>SB116</mark></h2>
+            </div>
+        </div>
+        <div class="logout">
+            <button onclick="location.href='/logout'">LOG-OUT</button>
+        </div>
+    </section>
+    <footer class="foot">
+        <div class="footbg">
+            <div class="foot1">
+                <h2>Popular Products</h2>
+                <ul>
+                    <li>Home Loan</li> |
+                    <li>Personal Loan</li> |
+                    <li>Education Loan</li> |
+                    <li>Savings Account</li> |
+                    <li>Salary Account</li> |
+                    <li>Debit Card</li> |
+                    <li>Pre-paid Cards</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <div class="footp1">
+                    <ul>
+                        <li>Complaint for Failed Digital Transactions</li>
+                        <li>RTI Act</li>
+                        <li>Verify Check Sum Value</li>
+                        <li>Vigilance Overtone Complaints</li>
+                        <li>Govt. of India - Cyber Fraud Reporting Portal</li>
+                    </ul>
+                </div>
+                <div class="footp2">
+                    <ul>
+                        <li>Our Health care Product</li>
+                        <li>ASBA</li>
+                        <li>Rajbhasha</li>
+                        <li>Blocking of Internet Banking</li>
+                        <li>Disability / Divyangjan Accessible Branches</li>
+                        <li>ATM Accessible to Divyangjans with Braille /
+                            Talking ATM Facility</li>
+                        <li>Branches with Dedicated Nodal Officer /
+                            Counter for providing services</li>
+                    </ul>
+                </div>
+                <div class="footp3">
+                    <ul>
+                        <li>Udyami</li>
+                        <li>Downloads</li>
+                        <li>Terms & Conditions</li>
+                        <li>Bank Holiday Calendar</li>
+                        <li>Help?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot3">
+                <h1>©2026 Bank Of India. All rights reserved.</h1>
+                <p>Site best viewed at 136*768 resolution in Microsoft Edge 105+,
+                    Mozilla 105+ and Google Chrome 106+ browser versions.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

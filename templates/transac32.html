@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style23.css')}}">
+    <script src="{{url_for('static',filename='js/calc.js')}}"></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/loans">Loan</a></li>
+                {%if "email" not in session:%}
+                <li><a href="/login">Login</a></li>
+                {%else%}
+                <li><a href="/transactions">Transcations</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/profile">Profile</a></li>
+                {%endif%}
+            </ul>
+        </nav>
+    </header>
+    <section class="sectransac">
+        <div class="transoptions">
+            <div class="transopt1">
+                <img src="{{url_for('static',filename='web/deposit.jpg')}}" alt="loading...">
+                <center>
+                    <button onclick="showdeposit()">Deposit</button>
+                </center>
+            </div>
+            <div class="transopt2">
+                <img src="{{url_for('static',filename='web/withdraw.jpg')}}" alt="loading...">
+                <center>
+                    <button onclick="showwithdraw()">Withdraw</button>
+                    </form>
+                </center>
+            </div>
+        </div>
+        <div class="security" id="dp23">
+            <div class="dp56">
+                <button onclick="showdeposit()">X</button>
+            </div>
+            <h2>Enter Your Security Key</h2>
+            <form action="/transactions" method="get">
+                <input type="text" name="d1" maxlength="1" minlength="1" required>
+                <input type="text" name="d2" maxlength="1" minlength="1" required>
+                <input type="text" name="d3" maxlength="1" minlength="1" required>
+                <input type="text" name="d4" maxlength="1" minlength="1" required><br><br>
+                <center><button type="submit" name="dep" value="dep">CHECK</button></center>
+                <p>{{err_dep}}</p>
+            </form>
+        </div>
+        <div class="security" id="wd23">
+            <div class="dp56">
+                <button onclick="showwithdraw()">X</button>
+            </div>
+            <h2>Enter Your Security Key</h2>
+            <form action="/transactions" method="get">
+                <input type="text" name="w1" maxlength="1" minlength="1" required>
+                <input type="text" name="w2" maxlength="1" minlength="1" required>
+                <input type="text" name="w3" maxlength="1" minlength="1" required>
+                <input type="text" name="w4" maxlength="1" minlength="1" required><br><br>
+                <center><button name="with" value="with">CHECK</button></center>
+                <p>{{err_wd}}</p>
+            </form>
+        </div>
+    </section>
+
+
+    <footer class="foot">
+        <div class="footbg">
+            <div class="foot1">
+                <h2>Popular Products</h2>
+                <ul>
+                    <li>Home Loan</li> |
+                    <li>Personal Loan</li> |
+                    <li>Education Loan</li> |
+                    <li>Savings Account</li> |
+                    <li>Salary Account</li> |
+                    <li>Debit Card</li> |
+                    <li>Pre-paid Cards</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <div class="footp1">
+                    <ul>
+                        <li>Complaint for Failed Digital Transactions</li>
+                        <li>RTI Act</li>
+                        <li>Verify Check Sum Value</li>
+                        <li>Vigilance Overtone Complaints</li>
+                        <li>Govt. of India - Cyber Fraud Reporting Portal</li>
+                    </ul>
+                </div>
+                <div class="footp2">
+                    <ul>
+                        <li>Our Health care Product</li>
+                        <li>ASBA</li>
+                        <li>Rajbhasha</li>
+                        <li>Blocking of Internet Banking</li>
+                        <li>Disability / Divyangjan Accessible Branches</li>
+                        <li>ATM Accessible to Divyangjans with Braille /
+                            Talking ATM Facility</li>
+                        <li>Branches with Dedicated Nodal Officer /
+                            Counter for providing services</li>
+                    </ul>
+                </div>
+                <div class="footp3">
+                    <ul>
+                        <li>Udyami</li>
+                        <li>Downloads</li>
+                        <li>Terms & Conditions</li>
+                        <li>Bank Holiday Calendar</li>
+                        <li>Help?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot3">
+                <h1>©2026 Bank Of India. All rights reserved.</h1>
+                <p>Site best viewed at 136*768 resolution in Microsoft Edge 105+,
+                    Mozilla 105+ and Google Chrome 106+ browser versions.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

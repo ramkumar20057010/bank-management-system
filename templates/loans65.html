@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style23.css')}}">
+    <script src="{{url_for('static',filename='js/calc.js')}}"></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/loans">Loan</a></li>
+                {%if "email" not in session:%}
+                <li><a href="/login">Login</a></li>
+                {%else%}
+                <li><a href="/transactions">Transcations</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/profile">Profile</a></li>
+                {%endif%}
+            </ul>
+        </nav>
+    </header>
+    <section class="sechome">
+        <div class="homeanim1">
+            <div class="homeanim2">
+                <div class="hanim-img"><img src="{{url_for('static',filename='web/star-asset.jpg')}}" alt="loading..">
+                    <h4>Acheive your Goals with EMO banking</h4>
+                </div>
+                <div class="hanim-img"><img src="{{url_for('static',filename='web/bank.avif')}}" alt="loading..">
+                    <h4>Craft your success story with 24x7 Bussiness Loans</h4>
+                </div>
+                <div class="hanim-img"><img src="{{url_for('static',filename='web/gold-loan.avif')}}" alt="loading..">
+                    <h4>Get your digital account allocated in 24 hrs using PAN ,Aadhar & Video KYC</h4>
+                </div>
+                <div class="hanim-img"><img src="{{url_for('static',filename='web/salary-account.avif')}}" alt="loading..">
+                    <h4>Helping you to Build your Dream startup</h4>
+                </div>
+            </div>
+            <div class="homeanim2" aria-hidden="true">
+                <div class="hanim-img"><img src="{{url_for('static',filename='web/star-asset.jpg')}}" alt="loading..">
+                    <h4>Acheive your Goals with EMO banking</h4>
+                </div>
+                <div class="hanim-img"><img src="{{url_for('static',filename='web/bank.avif')}}" alt="loading..">
+                    <h4>Craft your success story with 24x7 Bussiness Loans</h4>
+                </div>
+                <div class="hanim-img"><img src="{{url_for('static',filename='web/gold-loan.avif')}}" alt="loading..">
+                    <h4>Get your digital account allocated in 24 hrs using PAN ,Aadhar & Video KYC</h4>
+                </div>
+                <div class="hanim-img"><img src="{{url_for('static',filename='web/salary-account.avif')}}" alt="loading..">
+                    <h4>Helping you to Build your Dream startup</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="secloantypes">
+        <div class="loan1">
+            <center>
+                <img src="{{url_for('static',filename='loans/personal-loan12.avif')}}" alt="loading..">
+                <h3>Personal Loan</h3>
+                {%if msg=="Completed":%}
+                <a href="/personalloan" class="app23">Apply Now</a>
+                <a href="/personalloan" class="know23">Know More</a>
+                {%else%}
+                <p>LOCKED</p>
+                {%endif%}
+            </center>
+        </div>
+        <div class="loan1">
+            <center>
+                <img src="{{url_for('static',filename='loans/home-loan12.avif')}}" alt="loading..">
+                <h3>Home Loan</h3>
+                
+                {%if msg=="Completed"%}
+                <a href="/homeloan" class="app23">Apply Now</a>
+                <a href="/homeloan" class="know23">Know More</a>
+                {%else%}
+                <p>LOCKED</p>
+                {%endif%}
+            </center>
+        </div>
+        <div class="loan1">
+            <center>
+                <img src="{{url_for('static',filename='loans/gold-loan12.avif')}}" alt="loading..">
+                <h3>Gold Loan</h3>
+                {%if msg=="Completed"%}
+                <a href="/goldloan" class="app23">Apply Now</a>
+                <a href="/goldloan" class="know23">Know More</a>
+                {%else%}
+                <p>LOCKED</p>
+                {%endif%}
+            </center>
+        </div>
+        <div class="loan1">
+            <center>
+                <img src="{{url_for('static',filename='loans/education-loan12.avif')}}" alt="loading..">
+                <h3>Education Loan</h3>
+                {%if msg=="Completed"%}
+                <a href="/educationloan" class="app23">Apply Now</a>
+                <a href="/educationloan" class="know23">Know More</a>
+                {%else%}
+                <p>LOCKED</p>
+                {%endif%}
+            </center>
+        </div>
+        <div class="loan1">
+            <center>
+                <img src="{{url_for('static',filename='loans/land-loan12.avif')}}" alt="loading..">
+                <h3>Land Loan</h3>
+                {%if msg=="Completed"%}
+                <a href="/landloan" class="app23">Apply Now</a>
+                <a href="/landloan" class="know23">Know More</a>
+                {%else%}
+                <p>LOCKED</p>
+                {%endif%}
+            </center>
+        </div>
+        <div class="loan1">
+            <center>
+                <img src="{{url_for('static',filename='loans/car-loan12.avif')}}" alt="loading..">
+                <h3>Car Loan</h3>
+                {%if msg=="Completed"%}
+                <a href="/carloan" class="app23">Apply Now</a>
+                <a href="/carloan" class="know23">Know More</a>
+                {%else%}
+                <p>LOCKED</p>
+                {%endif%}
+            </center>
+        </div>
+    </section>
+    {%if msg=="Loan exist":%}
+    <section class="secrepay">
+        <div class="repay1">
+            {%if lname=="Personal Loan":%}
+            <img src="{{url_for('static',filename='loans/personal-loan12.avif')}}">
+            {%elif lname=="Home Loan":%}
+            <img src="{{url_for('static',filename='loans/home-loan12.avif')}}">
+            {%elif lname=="Education Loan":%}
+            <img src="{{url_for('static',filename='loans/education-loan12.avif')}}">
+            {%elif lname=="Land Loan":%}
+            <img src="{{url_for('static',filename='loans/land-loan12.avif')}}">
+            {%elif lname=="Gold Loan":%}
+            <img src="{{url_for('static',filename='loans/gold-loan12.avif')}}">
+            {%elif lname=="Car Loan":%}
+            <img src="{{url_for('static',filename='loans/car-loan12.avif')}}">
+            {%endif%}
+            {%if pay=="show":%}
+            <h1>This Month EMI is 
+                {%if emi[2]==500:%}
+                ₹{{emi[1]+emi[2]}}0 includes fine ₹500.00
+                {%else%}
+                ₹{{emi[1]}}0
+                {%endif%}
+            </h1>
+            <button onclick="showloanpay()">Pay</button>
+            {%else%}
+            <h1>This Month EMI is already Paid...</h1>
+            {%endif%}
+        </div>
+        <div class="security security3" id="ld1">
+            <div class="dp56">
+                <button onclick="showloanpay()">X</button>
+            </div>
+            <h2>Enter Your Security Key</h2>
+            <form action="/loans" method="get">
+                <input type="text" name="uid" value="{{session['uid']}}" hidden>
+                <input type="text" name="emi_id" value="{{emi[0]}}" hidden>
+                <input type="text" name="l1" maxlength="1" minlength="1" required>
+                <input type="text" name="l2" maxlength="1" minlength="1" required>
+                <input type="text" name="l3" maxlength="1" minlength="1" required>
+                <input type="text" name="l4" maxlength="1" minlength="1" required><br><br>
+                <center><button type="submit"  name="emi" value="emi">CHECK</button></center>
+                <p>hh</p>
+            </form>
+        </div>
+    </section>
+    {%endif%}
+    <section class="homeinter">
+        <div class="sechomeinter">
+            <div class="homeinter-img">
+                <img src="{{url_for('static',filename='web/bank.avif')}}" alt="loading..">
+            </div>
+            <div class="homeinter-cont">
+                <div class="inter-anim1">
+                    <div class="inter-anim2">
+                        <div class="inter1">
+                            <div class="inter-cont">
+                                <h5>OUR</h5>
+                                <h4>NEW INTEREST RATE</h4>
+                                <h3>Home Loan</h3>
+                                <h2>Interest Rate</h2>
+                                <h6>p.a. onwards</h6>
+                                <p>The Home Loan is available at very competitive rates of interest, currently
+                                    available in the industry.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <img src="{{url_for('static',filename='web/home-loan.avif')}}">
+                        </div>
+                        <div class="inter1">
+                            <div class="inter-cont">
+                                <h5>OUR</h5>
+                                <h4>NEW INTEREST RATE</h4>
+                                <h3>Gold Loan</h3>
+                                <h2>Interest Rate</h2>
+                                <h6>p.a. onwards</h6>
+                                <p>The Gold Loan is available at very competitive rates of interest, currently
+                                    available in the industry.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <img src="{{url_for('static',filename='web/gold-loan.avif')}}">
+                        </div>
+                        <div class="inter1">
+                            <div class="inter-cont">
+                                <h5>OUR</h5>
+                                <h4>NEW INTEREST RATE</h4>
+                                <h3>Personal Loan</h3>
+                                <h2>Interest Rate</h2>
+                                <h6>p.a. onwards</h6>
+                                <p>The Personal Loan is available at very competitive rates of interest, currently
+                                    available in the industry.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <img src="{{url_for('static',filename='web/salary-account.avif')}}">
+                        </div>
+                        <div class="inter1">
+                            <div class="inter-cont">
+                                <h5>OUR</h5>
+                                <h4>NEW INTEREST RATE</h4>
+                                <h3>Education Loan</h3>
+                                <h2>Interest Rate</h2>
+                                <h6>p.a. onwards</h6>
+                                <p>The Education Loan is available at very competitive rates of interest, currently
+                                    available in the industry.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <img src="{{url_for('static',filename='web/education-loan.avif')}}">
+                        </div>
+                    </div>
+                    <div class="inter-anim2" aria-hidden="true">
+                        <div class="inter1">
+                            <div class="inter-cont">
+                                <h5>OUR</h5>
+                                <h4>NEW INTEREST RATE</h4>
+                                <h3>Home Loan</h3>
+                                <h2>Interest Rate</h2>
+                                <h6>p.a. onwards</h6>
+                                <p>The Home Loan is available at very competitive rates of interest, currently
+                                    available in the industry.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <img src="{{url_for('static',filename='web/home-loan.avif')}}">
+                        </div>
+                        <div class="inter1">
+                            <div class="inter-cont">
+                                <h5>OUR</h5>
+                                <h4>NEW INTEREST RATE</h4>
+                                <h3>Gold Loan</h3>
+                                <h2>Interest Rate</h2>
+                                <h6>p.a. onwards</h6>
+                                <p>The Gold Loan is available at very competitive rates of interest, currently
+                                    available in the industry.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <img src="{{url_for('static',filename='web/gold-loan.avif')}}">
+                        </div>
+                        <div class="inter1">
+                            <div class="inter-cont">
+                                <h5>OUR</h5>
+                                <h4>NEW INTEREST RATE</h4>
+                                <h3>Personal Loan</h3>
+                                <h2>Interest Rate</h2>
+                                <h6>p.a. onwards</h6>
+                                <p>The Personal Loan is available at very competitive rates of interest, currently
+                                    available in the industry.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <img src="{{url_for('static',filename='web/salary-account.avif')}}">
+                        </div>
+                        <div class="inter1">
+                            <div class="inter-cont">
+                                <h5>OUR</h5>
+                                <h4>NEW INTEREST RATE</h4>
+                                <h3>Education Loan</h3>
+                                <h2>Interest Rate</h2>
+                                <h6>p.a. onwards</h6>
+                                <p>The Education Loan is available at very competitive rates of interest, currently
+                                    available in the industry.</p>
+                                <button>Learn more</button>
+                            </div>
+                            <img src="{{url_for('static',filename='web/education-loan.avif')}}">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="foot">
+        <div class="footbg">
+            <div class="foot1">
+                <h2>Popular Products</h2>
+                <ul>
+                    <li>Home Loan</li> |
+                    <li>Personal Loan</li> |
+                    <li>Education Loan</li> |
+                    <li>Savings Account</li> |
+                    <li>Salary Account</li> |
+                    <li>Debit Card</li> |
+                    <li>Pre-paid Cards</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <div class="footp1">
+                    <ul>
+                        <li>Complaint for Failed Digital Transactions</li>
+                        <li>RTI Act</li>
+                        <li>Verify Check Sum Value</li>
+                        <li>Vigilance Overtone Complaints</li>
+                        <li>Govt. of India - Cyber Fraud Reporting Portal</li>
+                    </ul>
+                </div>
+                <div class="footp2">
+                    <ul>
+                        <li>Our Health care Product</li>
+                        <li>ASBA</li>
+                        <li>Rajbhasha</li>
+                        <li>Blocking of Internet Banking</li>
+                        <li>Disability / Divyangjan Accessible Branches</li>
+                        <li>ATM Accessible to Divyangjans with Braille /
+                            Talking ATM Facility</li>
+                        <li>Branches with Dedicated Nodal Officer /
+                            Counter for providing services</li>
+                    </ul>
+                </div>
+                <div class="footp3">
+                    <ul>
+                        <li>Udyami</li>
+                        <li>Downloads</li>
+                        <li>Terms & Conditions</li>
+                        <li>Bank Holiday Calendar</li>
+                        <li>Help?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot3">
+                <h1>©2026 Bank Of India. All rights reserved.</h1>
+                <p>Site best viewed at 136*768 resolution in Microsoft Edge 105+,
+                    Mozilla 105+ and Google Chrome 106+ browser versions.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

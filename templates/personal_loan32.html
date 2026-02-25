@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style23.css')}}">
+    <script src="{{url_for('static',filename='js/calc.js')}}"></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/loans">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="seccarloan">
+        <div class="carloan12">
+            <div class="carl1">
+                <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+                <ul>
+                    <li>Loan in just 1 weeks</li>
+                    <li>Fully Digital</li>
+                    <li>No Paperwork</li>
+                    <li>Available for EOB Bank & other bank customers</li>
+                </ul>
+                {%if "email" not in session%}
+                <button onclick="location.href='/login'">Apply Now</button>
+                {%else%}
+                <button onclick="showForm()">Apply Now</button>
+                {%endif%}
+                <h3>Terms & Conditions</h3>
+                <ul class="ul5">
+                    <li>Credit at sole discretion of EOB Bank. Interest rate subject to change
+                        without prior intimation.</li>
+                    <li>Other charges and Taxes are applicable.</li>
+                    <li>Post 50% tenure completion (Minimum 36 months) and No EMI Bounce.</li>
+                </ul>
+            </div>
+            <div class="carl2">
+                <img src="{{url_for('static',filename='loans/personal-loan12.avif')}}">
+                <div class="carl23">
+                    <h2>Interest Rate: 7%</h2>
+                    <h1>Time Tenure: 3 Years</h1>
+                </div>
+            </div>
+        </div><br>
+        <div class="overflow" id="r1">
+            <div class="wrongdiv">
+                <button class="wrong" onclick="showForm()">X</button>
+            </div>
+            <div class="ovfl1">
+                <form action="/loans" method="post" enctype="multipart/form-data">
+                    <h1>APPLY</h1>
+                    <input type="text" name="uid" value="{{session['uid']}}" hidden required>
+                    <input type="text" name="loan" value="Personal Loan" hidden required>
+                    <input type="number" name="interest" value="15" hidden required>
+                    <input type="number" name="timetenure" value="36" hidden required>
+                    <label>Purpose of Loan:</label>
+                    <input type="text" class="ngloan" name="loanDetails" required><br><br>
+                    <label>Monthly Income:</label>
+                    <input type="text" class="ngloan" name="loanYear" required><br><br>
+                    <label>Upload the Salary slips (last 3 months):</label>
+                    <input type="file" style="border: none;" name="loanimg" required><br><br>
+                    <label>Upload the Pan Card:</label>
+                    <input type="file" style="border: none;" name="loandoc" accept=".pdf" required><br><br>
+                    <label>Enter your Required Loan amount:</label>
+                    <input type="number" min="10000" max="100000" class="ngloan" name="loanAmount" required><br><br>
+                    <button type="submit" onclick="loanreq()">APPLY</button>
+                    <p><mark>Note:</mark>Your Loan will be sanctioned after Admin's approval.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="foot">
+        <div class="footbg">
+            <div class="foot1">
+                <h2>Popular Products</h2>
+                <ul>
+                    <li>Home Loan</li> |
+                    <li>Personal Loan</li> |
+                    <li>Education Loan</li> |
+                    <li>Savings Account</li> |
+                    <li>Salary Account</li> |
+                    <li>Debit Card</li> |
+                    <li>Pre-paid Cards</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <div class="footp1">
+                    <ul>
+                        <li>Complaint for Failed Digital Transactions</li>
+                        <li>RTI Act</li>
+                        <li>Verify Check Sum Value</li>
+                        <li>Vigilance Overtone Complaints</li>
+                        <li>Govt. of India - Cyber Fraud Reporting Portal</li>
+                    </ul>
+                </div>
+                <div class="footp2">
+                    <ul>
+                        <li>Our Health care Product</li>
+                        <li>ASBA</li>
+                        <li>Rajbhasha</li>
+                        <li>Blocking of Internet Banking</li>
+                        <li>Disability / Divyangjan Accessible Branches</li>
+                        <li>ATM Accessible to Divyangjans with Braille /
+                            Talking ATM Facility</li>
+                        <li>Branches with Dedicated Nodal Officer /
+                            Counter for providing services</li>
+                    </ul>
+                </div>
+                <div class="footp3">
+                    <ul>
+                        <li>Udyami</li>
+                        <li>Downloads</li>
+                        <li>Terms & Conditions</li>
+                        <li>Bank Holiday Calendar</li>
+                        <li>Help?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot3">
+                <h1>©2026 Bank Of India. All rights reserved.</h1>
+                <p>Site best viewed at 136*768 resolution in Microsoft Edge 105+,
+                    Mozilla 105+ and Google Chrome 106+ browser versions.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

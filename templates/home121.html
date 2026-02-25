@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style23.css')}}">
+    <script src="{{url_for('static',filename='js/calc.js')}}"></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/loans">Loan</a></li>
+                {%if "email" not in session:%}
+                <li><a href="/login">Login</a></li>
+                {%else%}
+                <li><a href="/transactions">Transcations</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/profile">Profile</a></li>
+                {%endif%}
+            </ul>
+        </nav>
+    </header>
+    <section class="sec1">
+        <div class="frt1">
+            <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+            <h2>Building a better India - one step at a time.</h2>
+            <h4>From education to environment and everything in between<br>
+             EOB Parivartan is transforming India.</h4>
+            <div class="frt2">
+                <div class="frtel1"><h3>12+ Lakh</h3><p>Households impacted</p></div>
+                <div class="frtel1"><h3>10+ Crore</h3><p>Lives impacted</p></div>
+                <div class="frtel1"><h3>20+ Lakh</h3><p>Peoples Benefited</p></div>
+                <div class="frtel1"><h3>9K+ </h3><p>Villages Covered</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="secloan">
+        <div class="loan">
+            <img src="{{url_for('static',filename='web/home-loan.avif')}}" alt="loading..">
+            <div class="loandetails">
+                <h2>Star Home Loan</h2>
+                <h4>ROI 7.10% p.a. onwards</h4>
+                <p>Provides loans to purchase a Plot for construction
+                    of a House, to purchase / construct house / flat, as
+                    well as for renovation / repair / alteration / addition.
+                </p>
+            </div>
+        </div>
+        <div class="loan">
+            <img src="{{url_for('static',filename='web/star-asset.jpg')}}" alt="loading..">
+            <div class="loandetails">
+                <h2>Star Asset Backed Loan</h2>
+                <h4>25% in NFB Commissions</h4>
+                <p>To provide working capital for building up of
+                    current assets.
+                </p>
+            </div>
+        </div>
+        <div class="loan">
+            <img src="{{url_for('static',filename='web/gold-loan.avif')}}" alt="loading..">
+            <div class="loandetails">
+                <h2>Gold Loan</h2>
+                <h4>At attractive rate of interest</h4>
+                <p>Gold Loan is the most convenient and easy way to fullfill
+                    all your credit needs.
+                </p>
+            </div>
+        </div>
+        <div class="loan">
+            <img src="{{url_for('static',filename='web/salary-account.avif')}}" alt="loading..">
+            <div class="loandetails">
+                <h2>Government Salary Account</h2>
+                <p>Start buildiing a secure & prosperous future with a banking
+                    solution designed specifically for government sector employees.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="secbenefits">
+        <div class="benefit1">
+            <div class="benp1">
+                <center><img src="{{url_for('static',filename='web/comp-rates.avif')}}" alt="loading..."></center>
+                <h3>Competitive Rates</h3>
+                <p>Earn 2x of the National Average<br>
+                on your savings.</p>
+            </div>
+            <div class="benp1">
+                <center><img src="{{url_for('static',filename='web/secure.avif')}}" alt="loading..."></center>
+                <h3>Secure</h3>
+                <p>Your EOB Bank Account is FDIC<br>
+                insured, which means it's secured.</p>
+            </div>
+            <div class="benp1">
+                <center><img src="{{url_for('static',filename='web/digital-convenience.avif')}}" alt="loading..."></center>
+                <h3>Digital Convenience</h3>
+                <p>It makes easy to manage your account.</p>
+            </div>
+            <div class="benp1">
+                <center><img src="{{url_for('static',filename='web/no-fees.avif')}}" alt="loading..."></center>
+                <h3>No Monthly Service Fees</h3>
+                <p>No monthly service fees, so you<br>
+                 can keep what you earn.</p>
+            </div>
+        </div>
+    </section>
+    <section class="secmoney">
+        <div class="moneyp1">
+            <h3>Member</h3>
+            <h1>FDIC</h1>
+        </div>
+        <div class="moneyp2">
+            <h2>Your Money is safe & sound.</h2>
+            <p>First Citizens Bank and Trust Company (FCB) is a member of the Federal Deposit Insurance<br>
+            Corporation (FDIC). This means your deposits are insured upto ₹ 250,000 per depositor, for each <br>
+            account ownership category. Deposits held under the names of First Citizen's Bank and Trust<br>
+            Company and all banks which are a division of FCB are not separatedly insured. Deposits from<br>
+            each of these banks must be combined for purpose of determining whether a depositor has<br>
+            exceeded the federal insurance deposit limit.</p>
+        </div>
+    </section>
+    <section class="secprogress">
+        <div class="prog">
+            <div class="progp1">
+                <h2>open to the progress of all</h2>
+                <h3>Commited to our responsibity towards the society.</h3>
+                <ul>
+                    <li><h4>2.05 M+</h4><p>Households Across<br> India</p></li>
+                    <li><h4>100 Cr+</h4><p>National Cancer Grid<br>(NCG)</p></li>
+                    <li><h4>3.27 M+</h4><p>Trees Planted</p></li>
+                </ul>
+            </div>
+            <div class="progp2">
+                <img src="{{url_for('static',filename='web/progress.png')}}">
+            </div>
+        </div>
+
+    </section>
+    <footer class="foot">
+        <div class="footbg">
+            <div class="foot1">
+                <h2>Popular Products</h2>
+                <ul>
+                    <li>Home Loan</li> |
+                    <li>Personal Loan</li> |
+                    <li>Education Loan</li> |
+                    <li>Savings Account</li> |
+                    <li>Salary Account</li> |
+                    <li>Debit Card</li> |
+                    <li>Pre-paid Cards</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <div class="footp1">
+                    <ul>
+                        <li>Complaint for Failed Digital Transactions</li>
+                        <li>RTI Act</li>
+                        <li>Verify Check Sum Value</li>
+                        <li>Vigilance Overtone Complaints</li>
+                        <li>Govt. of India - Cyber Fraud Reporting Portal</li>
+                    </ul>
+                </div>
+                <div class="footp2">
+                    <ul>
+                        <li>Our Health care Product</li>
+                        <li>ASBA</li>
+                        <li>Rajbhasha</li>
+                        <li>Blocking of Internet Banking</li>
+                        <li>Disability / Divyangjan Accessible Branches</li>
+                        <li>ATM Accessible to Divyangjans with Braille /
+                            Talking ATM Facility</li>
+                        <li>Branches with Dedicated Nodal Officer /
+                            Counter for providing services</li>
+                    </ul>
+                </div>
+                <div class="footp3">
+                    <ul>
+                        <li>Udyami</li>
+                        <li>Downloads</li>
+                        <li>Terms & Conditions</li>
+                        <li>Bank Holiday Calendar</li>
+                        <li>Help?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot3">
+                <h1>©2026 Bank Of India. All rights reserved.</h1>
+                <p>Site best viewed at 136*768 resolution in Microsoft Edge 105+,
+                    Mozilla 105+ and Google Chrome 106+ browser versions.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

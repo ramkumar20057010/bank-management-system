@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style23.css')}}">
+    <script src="{{url_for('static',filename='js/calc.js')}}"></script>
+</head>
+
+<body>
+    <header class="head">
+        <img src="{{url_for('static',filename='web/emo-logo.png')}}">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/transactions">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="sectrans1">
+        <div class="depositform">
+            <form action="/deposit" method="get">
+                <h1>Deposit</h1>
+                <p><mark>Note:</mark>The Money will be deposited after admin approval.</p>
+                <table>
+                    <tr>
+                        <th>Rupees(₹)</th>
+                        <th>Count</th>
+                        <th>Amount(₹)</th>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td><input type="number" class="ncount" min="1" max="1000" id="n500" oninput="calsum500(); calsum();"></td>
+                        <td><input type="number" id="na500" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td><input type="number" class="ncount" min="1" max="1000" id="n200" oninput="calsum200(); calsum();"></td>
+                        <td><input type="number" id="na200" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td><input type="number" class="ncount" min="1" max="1000" id="n100" oninput="calsum100(); calsum();"></td>
+                        <td><input type="number" id="na100" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td><input type="number" class="ncount" min="1" max="1000" id="n50" oninput="calsum50(); calsum();"></td>
+                        <td><input type="number" id="na50" readonly></td>
+                    </tr>
+                    <tr>
+                        <td class="dtotal2"></td>
+                        <td class="dtotal1">Total Amount(₹)</td>
+                        <input type="text" name="uid" value="{{session['uid']}}" hidden>
+                        <td><input type="number" name="dpamount" id="dp" readonly></td>
+                    </tr>
+                </table>
+                <center><button type="submit" name="deposit" value="deposited" onclick="deposit1()">Deposit</button></center>
+            </form>
+        </div>
+    </section>
+    
+    <footer class="foot">
+        <div class="footbg">
+            <div class="foot1">
+                <h2>Popular Products</h2>
+                <ul>
+                    <li>Home Loan</li> |
+                    <li>Personal Loan</li> |
+                    <li>Education Loan</li> |
+                    <li>Savings Account</li> |
+                    <li>Salary Account</li> |
+                    <li>Debit Card</li> |
+                    <li>Pre-paid Cards</li>
+                </ul>
+            </div>
+            <div class="foot2">
+                <div class="footp1">
+                    <ul>
+                        <li>Complaint for Failed Digital Transactions</li>
+                        <li>RTI Act</li>
+                        <li>Verify Check Sum Value</li>
+                        <li>Vigilance Overtone Complaints</li>
+                        <li>Govt. of India - Cyber Fraud Reporting Portal</li>
+                    </ul>
+                </div>
+                <div class="footp2">
+                    <ul>
+                        <li>Our Health care Product</li>
+                        <li>ASBA</li>
+                        <li>Rajbhasha</li>
+                        <li>Blocking of Internet Banking</li>
+                        <li>Disability / Divyangjan Accessible Branches</li>
+                        <li>ATM Accessible to Divyangjans with Braille /
+                            Talking ATM Facility</li>
+                        <li>Branches with Dedicated Nodal Officer /
+                            Counter for providing services</li>
+                    </ul>
+                </div>
+                <div class="footp3">
+                    <ul>
+                        <li>Udyami</li>
+                        <li>Downloads</li>
+                        <li>Terms & Conditions</li>
+                        <li>Bank Holiday Calendar</li>
+                        <li>Help?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot3">
+                <h1>©2026 Bank Of India. All rights reserved.</h1>
+                <p>Site best viewed at 136*768 resolution in Microsoft Edge 105+,
+                    Mozilla 105+ and Google Chrome 106+ browser versions.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
