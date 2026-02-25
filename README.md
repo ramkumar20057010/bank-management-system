@@ -60,33 +60,33 @@ The system follows a client-server architecture where:
 
 ### 🏠 Home Page
 
-![Home](screenshots/home.png)
+![Home](screenshot/home.png)
 
 ---
 
 ### 🛠️ Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](screenshot/admin-dashboard.png)
 
 ---
 
 ### 🏠 Loan Application Page
-![Loan Application](screenshots/loan-apply.png)
+![Loan Application](screenshot/loan-apply.png)
 
 ---
 
 ### 💰 EMI Payment Page
-![EMI Payment](screenshots/emi-payment.png)
+![EMI Payment](screenshot/emi-payment.png)
 
 ---
 
 ### 📊 Transactions Dashboard
-![Transaction Dashboard](screenshots/transactions.png)
+![Transaction Dashboard](screenshot/transactions.png)
 
 ---
 
 ### 🛠️ Admin – Loan Approval Panel
-![Loan Approval](screenshots/admin-approval.png)
+![Loan Approval](screenshot/admin-approval.png)
 
 ---
 
