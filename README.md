@@ -60,13 +60,13 @@ The system follows a client-server architecture where:
 
 ### 🏠 Home Page
 
-![Home](screenshots/home.png)
+![Home](screenshot/home.png)
 
 ---
 
 ### 🛠️ Admin Dashboard
 
-![Admin Dashboard]('screenshot/admin-dashboard.png')
+![Admin Dashboard](screenshot/admin-dashboard.png)
 
 ---
 
