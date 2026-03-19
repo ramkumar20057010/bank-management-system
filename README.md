@@ -66,7 +66,7 @@ The system follows a client-server architecture where:
 
 ### 🛠️ Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard]('screenshots/admin-dashboard.png')
 
 ---
 
