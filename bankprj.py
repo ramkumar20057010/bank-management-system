@@ -38,6 +38,17 @@ def home():
     return render_template("home121.html")
 
 
+@bank.route("/notifications",methods=["GET","POST"])
+def notifications():
+    r=""
+    if session:
+        cur=conn.cursor()
+        query=''' SELECT n.msg,u.u_name FROM notifications n 
+        JOIN users u on n.nu_id=u.u_id WHERE u.u_id=%s; '''
+        cur.execute(query,(session["uid"],))
+        r=cur.fetchall()
+
+    return render_template("notifications23.html",rows=r)
 
 @bank.route("/history",methods=["GET","POST"])
 def history():
@@ -258,7 +269,7 @@ def login():
         pwd=request.args.get("pwd")
         cur=conn.cursor()
         query=''' SELECT u_id,u_name,email,security_key,balance FROM users 
-         WHERE email=%s AND  pass=%s;'''
+         WHERE email=%s AND pass=%s;'''
         cur.execute(query,(email,pwd))
         row=cur.fetchone()
         if row=="":
@@ -521,15 +532,20 @@ def viewloans():
          VALUES(%s,'Loan',%s,'Loan Received'); '''
         cur.execute(query,(uid,p))
         conn.commit()
-
+        query=''' DELETE FROM loans WHERE lu_id=%s AND l_status='Not Active'; '''
+        cur.execute(query,(uid,))
         return redirect("/loanrequest")
 
 
     if request.args.get("reject")=="rejected":
         lid=request.args.get("lid")
+        uid=request.args.get("uid")
         cur=conn.cursor()
         query=''' DELETE FROM loans WHERE l_id=%s; '''
         cur.execute(query,(lid,))
+        conn.commit()
+        query=''' INSERT INTO notifications(nu_id,msg) VALUES(%s,%s,'Approved'); '''
+        cur.execute(query,(uid,))
         conn.commit()
         return redirect("/loanrequest")
     return render_template("viewloan464.html",row=r)

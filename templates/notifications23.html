@@ -27,69 +27,38 @@
             </ul>
         </nav>
     </header>
-    <section class="sechistory">
+    <section class="secnotify">
         {%if rows:%}
-        {% for i in rows:%}
-        {% if i[6]=='Deposited':%}
-        <div class="align-hist1">
-            <div class="deposit1">
-                <h5>Deposited at {{i[5]}}</h5>
-                <div class="deposit2">
-                    <h3>Ref. Id: {{i[0]}}</h3>
-                    <h1>₹1{{i[3]}}0</h1>
-                </div>
-                <h6>{{i[4]}}</h6>
+        {%for i in rows:%}
+        {%if i[0] == 'Approved'%}
+        <div class="loan-state1">
+            <div class="loan-approve">
+                Dear {{i[1]}}, your loan was sucessfully verified, we hope
+                you use this loan to fullfill your dreams and acheivements and
+                we are glad to help you providing this loan. Use this loan to
+                go beyond what you are capable and become a great one. Thanks for bring us in your way.
             </div>
         </div>
-        {%elif i[6]=='Withdrawn':%}
-        <div class="align-hist2">
-            <div class="withdraw1">
-                <h5>Withdrawal at {{i[5]}}</h5>
-                <div class="withdraw2">
-                    <h3>Ref. Id: {{i[0]}}</h3>
-                    <h1>₹{{i[3]}}0</h1>
-                </div>
-                <h6>{{i[4]}}</h6>
-            </div>
-        </div>
-        {%elif i[6]=="EMI Paid":%}
-        <div class="align-hist2">
-            <div class="withdraw1">
-                <h5>EMI Paid at {{i[5]}}</h5>
-                <div class="withdraw2">
-                    <h3>Ref. Id: {{i[0]}}</h3>
-                    <h1>₹{{i[3]}}0</h1>
-                </div>
-                <h6>{{i[4]}}</h6>
-            </div>
-        </div>
-        {%elif i[6]=="Loan Received":%}
-        <div class="align-hist2">
-            <div class="withdraw1">
-                <h5> Loan received at {{i[5]}}</h5>
-                <div class="withdraw2">
-                    <h3>Ref. Id: {{i[0]}}</h3>
-                    <h1>₹{{i[3]}}0</h1>
-                </div>
-                <h6>{{i[4]}}</h6>
+        {%else%}
+        <div class="loan-state2">
+            <div class="loan-reject">
+                Dear {{i[1]}}, sorry to say this your loan has been rejected due to some invalid credentials
+                you may use this loan to fullfill your dreams and acheivements but sorry
+                we are very sad to say this we are unable to providing this loan due to some invalid credentials
+                Please try another loan with good documents.
             </div>
         </div>
         {%endif%}
-
         {%endfor%}
         {%else%}
         <center>
-            <img src="{{url_for('static',filename='web/loanrequest.jpg')}}" alt="loading...">
-            <h1>You have no transaction History!...</h1>
+            <img src="{{url_for('static',filename='web/withdraw.jpg')}}" alt="loading...">
+            <h1>You don't have any notifications..</h1>
         </center>
         {%endif%}
     </section>
-    <section class="secbal">
-        <div class="rembal">
-            <h2>REMAINING ACCOUNT BALANCE</h2>
-            <h3>₹{{bal[0]}}0</h3>
-        </div>
-    </section>
+
+
     <footer class="foot">
         <div class="footbg">
             <div class="foot1">

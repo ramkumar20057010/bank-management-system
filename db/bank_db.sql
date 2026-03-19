@@ -36,10 +36,7 @@ CREATE TABLE transactions(
     FOREIGN KEY(tu_id) REFERENCES users(u_id)
 	);
 ALTER table transactions AUTO_INCREMENT=560001;
-
-SELECT * FROM transactions;
-
-
+    
 CREATE TABLE loans(
 	l_id INT AUTO_INCREMENT PRIMARY KEY,
     lu_id INT,
@@ -56,9 +53,6 @@ CREATE TABLE loans(
     );
 ALTER TABLE loans AUTO_INCREMENT=650001;
 
-SELECT * FROM loans;
-
-
 CREATE TABLE emi_schedule(
 	emi_id INT AUTO_INCREMENT PRIMARY KEY,
     lemi_id INT,
@@ -73,10 +67,11 @@ CREATE TABLE emi_schedule(
 	);
 ALTER TABLE emi_schedule AUTO_INCREMENT=7028001;
 
-SELECT * FROM emi_schedule;
-
-
-
+CREATE TABLE notifications(
+	n_id INT PRIMARY KEY AUTO_INCREMENT,
+    msg VARCHAR(100)
+	);
+ALTER TABLE notifications AUTO_INCREMENT=6540001;
 
 SELECT * FROM users;
 
@@ -85,6 +80,8 @@ SELECT * FROM transactions;
 SELECT * FROM loans;
 
 SELECT * FROM emi_schedule;
+
+SELECT * FROM notifications;
 
 USE bank_db;
 
